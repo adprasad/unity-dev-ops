@@ -1,0 +1,14 @@
+{
+    "name": "EditorMode",
+    "references": [
+        "SampleScene"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
