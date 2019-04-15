@@ -20,11 +20,15 @@ public class CameraMotor_Test {
     public IEnumerator CameraMotor_ChangesTransformRotationWhenProvidedVector()
     {
         CameraMotor cameraMotor = new GameObject().AddComponent<CameraMotor>();
-        Vector3 expectedFocus = new Vector3(100, 100, 0);
-
+        Quaternion expectedFocus = Quaternion.Euler(new Vector3(30,30,0));
+        float acceptableDifference = 0.02f;
         cameraMotor.Focus(expectedFocus);
+
         yield return new WaitForFixedUpdate();
 
-        Assert.AreEqual(expectedFocus, cameraMotor.transform.localRotation.eulerAngles, "Should look at requested position");
+        Assert.AreEqual(expectedFocus.w, cameraMotor.transform.rotation.w, acceptableDifference, "Should look at requested position w");
+        Assert.AreEqual(expectedFocus.x, cameraMotor.transform.rotation.x, acceptableDifference, "Should look at requested position x");
+        Assert.AreEqual(expectedFocus.y, cameraMotor.transform.rotation.y, acceptableDifference, "Should look at requested position y");
+        Assert.AreEqual(expectedFocus.z, cameraMotor.transform.rotation.z, acceptableDifference, "Should look at requested position z");
     }
 }

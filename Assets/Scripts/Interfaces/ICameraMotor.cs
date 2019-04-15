@@ -2,5 +2,5 @@
 using UnityEngine;
 
 public interface ICameraMotor {
-    void Focus(Vector3 focus);
+    void Focus(Quaternion focus);
 }

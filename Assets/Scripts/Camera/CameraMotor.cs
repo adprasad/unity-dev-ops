@@ -24,8 +24,8 @@ public class CameraMotor : MonoBehaviour, ICameraMotor
         }
     }
 
-    public void Focus(Vector3 focus)
+    public void Focus(Quaternion focus)
     {
-        throw new System.NotImplementedException();
+        transform.localRotation = focus;
     }
 }

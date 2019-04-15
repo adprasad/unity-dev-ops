@@ -3,6 +3,8 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.CodeDom;
 
 public class CameraInScene_Test {
 
