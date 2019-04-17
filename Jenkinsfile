@@ -14,11 +14,15 @@ pipeline {
           {
             stage('editMode')
             {
+              steps {
                 sh 'echo "editMode..."'
+              }
             }
             stage('playMode')
             {
+              steps {
                 sh 'echo "playMode..."'
+              }
             }
           }
         }
