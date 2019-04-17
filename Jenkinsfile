@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'docker' } }
+    agent any
     stages {
         stage('build') {
             steps {
@@ -9,6 +9,7 @@ pipeline {
             }
         }
         stage('test') {
+//    agent { docker { image 'docker' } }
           failFast true
           parallel 
           {
