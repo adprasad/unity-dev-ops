@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'gableroux/unity3d' } }
+    agent { docker { image 'docker' } }
     stages {
         stage('build') {
             steps {
@@ -14,12 +14,14 @@ pipeline {
           {
             stage('editMode')
             {
+    agent { docker { image 'gableroux/unity3d' } }
               steps {
                 sh 'echo "editMode..."'
               }
             }
             stage('playMode')
             {
+    agent { docker { image 'gableroux/unity3d' } }
               steps {
                 sh 'echo "playMode..."'
               }
