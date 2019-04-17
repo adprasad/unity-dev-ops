@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-              gitStatusWrapper(credentialsId: 'github-token', gitHubContext: 'Status', description: 'Validating') {
+              gitStatusWrapper(credentialsId: 'github-unity-dev-ops', gitHubContext: 'Status', description: 'Validating') {
                 sh 'echo "building..."'
               }
             }
