@@ -9,11 +9,15 @@ pipeline {
             }
         }
         stage('test') {
-          parrallel {
-            stage('editMode'){
+          failFast true
+          parallel 
+          {
+            stage('editMode')
+            {
                 sh 'echo "editMode..."'
             }
-            stage('playMode'){
+            stage('playMode')
+            {
                 sh 'echo "playMode..."'
             }
           }
